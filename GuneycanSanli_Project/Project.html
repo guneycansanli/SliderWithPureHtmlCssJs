@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: rgb(177, 151, 230);
+            background: linear-gradient(106deg, rgba(177, 151, 230, 1) 0%, rgba(255, 193, 250, 1) 26%, rgba(255, 251, 187, 1) 100%);
+        }
+
+        #item0 {
+            display: none
+        }
+
+        #item1 {
+            display: none
+        }
+
+        #item2 {
+            display: active
+        }
+
+        #item3 {
+            display: active
+        }
+
+        #item4 {
+            display: active
+        }
+
+        #item5 {
+            display: none
+        }
+
+        #item6 {
+            display: none
+        }
+
+        #MainDiv {
+            height: 850px;
+            width: 1000px;
+            background-color: rgb(255, 187, 201);
+            margin-left: 24%;
+            margin-top: 20px;
+            display: flex;
+            overflow: auto;
+        }
+
+        #leftSide {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid rgb(128, 130, 253);
+            position: absolute;
+            margin-top: 422px;
+            margin-left: 22%;
+        }
+
+        #rightSide {
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid rgb(128, 130, 253);
+            float: right;
+            position: absolute;
+            margin-top: 422px;
+            margin-left: 1470px;
+
+        }
+
+        #item0 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+
+
+        }
+
+        #item1 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+
+
+        }
+
+        #item2 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+
+        }
+
+        #item3 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+        }
+
+        #item4 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+        }
+
+        #item5 {
+            height: 750px;
+            width: 250px;
+            float: left;
+            background-color: rgb(182, 182, 255);
+            margin-left: 60px;
+            margin-top: 60px;
+            overflow: auto;
+        }
+
+        .discount {
+            height: 30px;
+            width: 35px;
+            opacity: 0.3;
+            float: left;
+            position: absolute;
+            background-color: rgb(255, 0, 0);
+            margin-top: 50px;
+            margin-left: 25px;
+            overflow: auto;
+        }
+
+        .photo {
+            background-color: rgba(230, 203, 255, 0.548);
+            height: 590px;
+            width: 200px;
+            margin-left: 25px;
+            margin-top: 10px;
+            overflow: auto;
+            text-align: center;
+            padding-top: 10px;
+
+        }
+
+        .kg {
+            height: 30px;
+            width: 35px;
+            float: left;
+            position: absolute;
+            background-color: rgb(102, 102, 102);
+            margin-top: 100px;
+            margin-left: 25px;
+            opacity: 0.5;
+            overflow: auto;
+        }
+
+        .name {
+            height: 20px;
+            width: 180px;
+            margin-top: 20px;
+            margin-left: 30px;
+            font-weight: bold;
+        }
+
+        .price {
+            height: 50px;
+            width: 50px;
+            background-color: rgba(255, 242, 191, 0.521);
+            margin-top: 40px;
+            margin-left: 90px;
+            float: left;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .oldPrice {
+            height: 50px;
+            width: 50px;
+            background-color: rgba(248, 59, 59, 0.349);
+            float: left;
+            margin-top: 40px;
+            margin-left: 20px;
+            text-align: center;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a id="leftSide" href="#" onclick="plusSlides(-1)"></a>
+    <a id="rightSide" href="#" onclick="plusSlides(1)"></a>
+    <div id="MainDiv">
+        <div class="item" id="item0">
+            <div class="discount"></div>
+            <div class="kg" id="kg"></div>
+            <div class="photo"><img src="" id="photo0" /> </div>
+            <div class="name" id="name">Deneme</div>
+            <div class="price" id="price">price</div>
+            <div class="oldPrice" id="oldPrice"><del></del></div>
+        </div>
+        <div class="item" id="item1">
+            <div class="discount1"></div>
+            <div class="kg" id="kg1"></div>
+            <div class="photo"><img src="" id="photo1" /> </div>
+            <div class="name" id="name1">Deneme</div>
+            <div class="price" id="price1">price</div>
+            <div class="oldPrice" id="oldPrice1"><del></del></div>
+        </div>
+        <div class="item" id="item2">
+            <div class="kg" id="kg2"></div>
+            <div class="photo"><img src="" id="photo2" /> </div>
+            <div class="name" id="name2">Deneme</div>
+            <div class="price" id="price2">price</div>
+            <div class="oldPrice" id="oldPrice2"><del></del></div>
+        </div>
+        <div class="item" id="item3">
+            <div class="discount"></div>
+            <div class="kg" id="kg3"></div>
+            <div class="photo"><img src="" id="photo3" /> </div>
+            <div class="name" id="name3">Deneme</div>
+            <div class="price" id="price3">price</div>
+            <div class="oldPrice" id="oldPrice3"><del></del></div>
+        </div>
+        <div class="item" id="item4">
+            <div class="discount"></div>
+            <div class="kg" id="kg4"></div>
+            <div class="photo"><img src="" id="photo4" /> </div>
+            <div class="name" id="name4">Deneme</div>
+            <div class="price" id="price4">price</div>
+            <div class="oldPrice" id="oldPrice4"><del></del></div>
+        </div>
+        <div class="item" id="item5">
+            <div class="discount"></div>
+            <div class="kg" id="kg5"></div>
+            <div class="photo"><img src="" id="photo5" /> </div>
+            <div class="name" id="name5">Deneme</div>
+            <div class="price" id="price5">price</div>
+            <div class="oldPrice" id="oldPrice5"><del></del></div>
+        </div>
+    </div>
+
+
+    <script>
+        //Products  
+        const products = [{
+            "productId": "PKT-42061",
+            "name": "Best of Vinexus 2017 Rotwein (6er-Paket)",
+            "url": "https://www.vinexus.de/best-of-vinexus-2017-rotwein-6er-paket.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=PKT-42061&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/PKT-42061_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/1c/fc/8e/PKT-420615a507118ac631_200x200.jpg",
+            "price": 49.3,
+            "priceText": "€49,30",
+            "oldPrice": 58.0,
+            "oldPriceText": "€58,00",
+            "category": ["Wein > Art > Pakete > Art > Aktionspakete", "Sale > Kategorien im Sale > Pakete", "Wein > Art > Pakete", "Wein > Art > Pakete > Art > Rotwein Pakete"],
+            "categories": ["Wein", "Art", "Pakete", "Art", "Aktionspakete", "Sale", "Kategorien im Sale", "Rotwein Pakete"],
+            "lastUpdateTime": 1518099000473,
+            "inStock": true,
+            "insertTime": 1514899645359,
+            "publishTime": 1514899645359,
+            "brand": "Unsere Selektion",
+            "params": {
+                "weight": "6 kg",
+                "basePrice": "4.5 Liter (10,96 € * / 1 Liter)",
+                "likeCount": "2",
+                "manLogo": "https://www.vinexus.de/media/image/41/42/bd/unsere-selektion-logo.gif",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "",
+                "land": "",
+                "region": "",
+                "art": "",
+                "stars": "",
+                "tastes": "",
+                "isAb": "",
+                "rebsorte": ""
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "FT-SW-0344-NV",
+            "name": "Veuve Clicquot Ponsardin Brut Magnum (1,5L)",
+            "url": "https://www.vinexus.de/veuve-clicquot-ponsardin-brut-magnum-1-5l.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=FT-SW-0344-NV&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/FT-SW-0344_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/b6/98/4b/FT-SW-034459a187aaa03bf_200x200.jpg",
+            "price": 107.0,
+            "priceText": "€107,00",
+            "oldPriceText": "",
+            "category": ["Champagner & Sekt > Art > Champagner"],
+            "categories": ["Champagner & Sekt", "Art", "Champagner"],
+            "lastUpdateTime": 1518099000624,
+            "inStock": true,
+            "insertTime": 1511520818423,
+            "publishTime": 1511520818423,
+            "brand": "Veuve Clicquot",
+            "params": {
+                "weight": "1 kg",
+                "basePrice": "1.5 Liter (71,33 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/0b/b4/94/veuve-clicquot.png",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "",
+                "land": "Frankreich",
+                "region": "Champagne",
+                "art": "Champagner",
+                "stars": "",
+                "tastes": "brut,",
+                "isAb": "",
+                "rebsorte": ""
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "PKT-2821",
+            "name": "Weinregion Baden - erstklassige Weingüter (6er-Paket)",
+            "url": "https://www.vinexus.de/weinregion-baden-erstklassiger-weingueter-6er-paket.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=PKT-2821&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/PKT-2821_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/fd/a8/fb/PKT-28215a7aa11df2e92_200x200.jpg",
+            "price": 66.78,
+            "priceText": "€66,78",
+            "oldPrice": 74.2,
+            "oldPriceText": "€74,20",
+            "category": ["Wein > Art > Pakete > Art > Genießer-Pakete", "Wein > Art > Pakete"],
+            "categories": ["Wein", "Art", "Pakete", "Genießer-Pakete"],
+            "lastUpdateTime": 1518099000702,
+            "inStock": true,
+            "insertTime": 1517390747188,
+            "publishTime": 1517390747188,
+            "brand": "Unsere Selektion",
+            "params": {
+                "weight": "6 kg",
+                "basePrice": "4.5 Liter (14,84 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/41/42/bd/unsere-selektion-logo.gif",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "true",
+                "land": "",
+                "region": "",
+                "art": "",
+                "stars": "",
+                "tastes": "",
+                "isAb": "",
+                "rebsorte": "Cuvée"
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "PKT-5109",
+            "name": "5 Sterne Platter 2018 - Ausgezeichnete Weine aus Südafrika (6er-Paket)",
+            "url": "https://www.vinexus.de/5-sterne-platter-2018-ausgezeichnete-weine-aus-suedafrika-6er-paket.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=PKT-5109&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/PKT-5109_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/ae/02/f2/PKT-51095a2641cd068a8_200x200.jpg",
+            "price": 107.64,
+            "priceText": "€107,64",
+            "oldPrice": 119.6,
+            "oldPriceText": "€119,60",
+            "category": ["Wein > Art > Pakete > Art > Rotwein Pakete", "Wein > Art > Pakete", "Sale > Kategorien im Sale > Pakete"],
+            "categories": ["Wein", "Art", "Pakete", "Art", "Rotwein Pakete", "Sale", "Kategorien im Sale"],
+            "lastUpdateTime": 1518099000472,
+            "inStock": true,
+            "insertTime": 1512503620976,
+            "publishTime": 1512503620976,
+            "brand": "Unsere Selektion",
+            "params": {
+                "weight": "6 kg",
+                "basePrice": "4.5 Liter (23,92 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/41/42/bd/unsere-selektion-logo.gif",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "",
+                "land": "",
+                "region": "",
+                "art": "",
+                "stars": "",
+                "tastes": "",
+                "isAb": "",
+                "rebsorte": ""
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "PKT-5641",
+            "name": "Pinotage aus Südafrika (6er-Paket)",
+            "url": "https://www.vinexus.de/pinotage-aus-suedafrika-6er-paket.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=PKT-5641&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/PKT-5641_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/d5/e5/cc/PKT-56415a71662b5ed2b_200x200.jpg",
+            "price": 46.2,
+            "priceText": "€46,20",
+            "oldPrice": 54.35,
+            "oldPriceText": "€54,35",
+            "category": ["Wein", "Wein > Art > Pakete", "Wein > Art > Pakete > Art > Gemischte Pakete", "Sale > Kategorien im Sale > Pakete"],
+            "categories": ["Wein", "Art", "Pakete", "Gemischte Pakete", "Sale", "Kategorien im Sale"],
+            "lastUpdateTime": 1518099000702,
+            "inStock": true,
+            "insertTime": 1517285302769,
+            "publishTime": 1517285302769,
+            "brand": "Unsere Selektion",
+            "params": {
+                "weight": "6 kg",
+                "basePrice": "4.5 Liter (10,27 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/41/42/bd/unsere-selektion-logo.gif",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "true",
+                "land": "",
+                "region": "",
+                "art": "",
+                "stars": "",
+                "tastes": "",
+                "isAb": "",
+                "rebsorte": "Pinotage"
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "PKT-456",
+            "name": "Bouchard Finlayson - südafrikanische Eleganz in Weiß (6er-Paket)",
+            "url": "https://www.vinexus.de/bouchard-finlayson-suedafrikanische-eleganz-in-weiss-6er-paket.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=PKT-456&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/PKT-456_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/28/ab/b7/PKT-45659f2c8ea38271_200x200.jpg",
+            "price": 94.18,
+            "priceText": "€94,18",
+            "oldPrice": 110.8,
+            "oldPriceText": "€110,80",
+            "category": ["Wein > Art > Pakete > Art > Südafrika", "Wein > Art > Pakete"],
+            "categories": ["Wein", "Art", "Pakete", "Art", "Südafrika"],
+            "lastUpdateTime": 1518099000651,
+            "inStock": true,
+            "insertTime": 1511464668510,
+            "publishTime": 1511464668510,
+            "brand": "Bouchard Finlayson",
+            "params": {
+                "weight": "6 kg",
+                "basePrice": "4.5 Liter (20,93 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/73/29/84/bouchard-finlayson.png",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "",
+                "land": "Südafrika",
+                "region": "",
+                "art": "",
+                "stars": "",
+                "tastes": "",
+                "isAb": "",
+                "rebsorte": "Cuvée"
+            },
+            "language": "DE",
+            "currency": ""
+        }, {
+            "productId": "WK-ZI-0010-16",
+            "name": "Casa Vinicola Minini Primitivo Puglia IGT Piane del Levante 2016",
+            "url": "https://www.vinexus.de/casa-vinicola-minini-primitivo-puglia-igt-piane-del-levante-2016.html?_sgm_campaign=scn_61868394b28e4000&_sgm_source=WK-ZI-0010-16&_sgm_action=click",
+            "image": "https://www.wine-logistix.de/magento_pic/efulfillment/WK-ZI-0010_2_.jpg",
+            "imageS": "https://www.vinexus.de/media/image/16/1e/e7/WK-ZI-00105a2f16c5113b6_200x200.jpg",
+            "price": 6.25,
+            "priceText": "€6,25",
+            "oldPriceText": "",
+            "category": ["Wein > Art > Rotweine", "Wein > Land > Italien", "Wein > Rebsorte > Zinfandel / Primitivo"],
+            "categories": ["Wein", "Art", "Rotweine", "Land", "Italien", "Rebsorte", "Zinfandel / Primitivo"],
+            "lastUpdateTime": 1518099000506,
+            "inStock": true,
+            "insertTime": 1511396237710,
+            "publishTime": 1511396237710,
+            "brand": "Casa Vinicola Minini",
+            "params": {
+                "weight": "1 kg",
+                "basePrice": "0.75 Liter (8,33 € * / 1 Liter)",
+                "likeCount": "",
+                "manLogo": "https://www.vinexus.de/media/image/fa/59/f3/casa-vinicola-minini.png",
+                "taxText": "inkl. MwSt. zzgl. Versandkosten",
+                "stockText": "Auf Lager. Lieferzeit 1-3 Werktage",
+                "isNew": "",
+                "land": "Italien",
+                "region": "Apulien",
+                "art": "",
+                "stars": "",
+                "tastes": "trocken,üppig & opulent,",
+                "isAb": "true",
+                "rebsorte": "Zinfandel / Primitivo"
+            },
+            "language": "DE",
+            "currency": ""
+        }];
+
+        var _slide = document.getElementsByClassName("item");
+
+        slideCount = _slide.length
+
+        console.log("Number of Items:" + slideCount);
+        //console.log(_slide[1].id);
+
+
+        var slidesMiddle = 3;           //Started with Mid widget's index
+
+        function plusSlides(i) {
+            slidesMiddle = slidesMiddle + i;
+            if (slidesMiddle < 1) {
+                slidesMiddle = 1;
+            }
+            if (slidesMiddle > slideCount - 2) {
+                slidesMiddle = slideCount - 2;
+            }
+            showSlides(slidesMiddle);
+            console.log("slideMiddle:" + slidesMiddle);
+        }
+        function setItems(products) {
+
+            const es = product.find(findImage)
+            document.getElementById("photo" + i + "").src = es.image;
+            console.log(es.image);
+
+        }
+        function showSlides(n) {
+
+            for (var i = 0; i < slideCount; i++) {
+                _slide[i].style.display = "none";             //All widget closed
+            }
+            _slide[n - 1].style.display = "block";
+            _slide[n].style.display = "block";             //Widget were opened that we need
+            _slide[n + 1].style.display = "block";
+
+        }
+
+
+
+        //First way of using dynamic for 1. product
+        const res = products.find(find1);
+        function find1(product) {
+            return product.productId === "PKT-42061";
+        }
+        console.log(res.brand);
+        console.log(res.image);
+        document.getElementById("photo0").src = res.image;                 //This zone is for products[0]
+        document.getElementById("name").innerHTML = res.name;
+        document.getElementById("price").innerHTML = res.price;
+        document.getElementById("oldPrice").innerHTML = res.oldPrice;
+        document.getElementById("kg").innerHTML = res.params.weight;
+
+
+        //Second way using dynemic i though object array like an array 
+
+        document.getElementById("photo1").src = products[1].image;
+        document.getElementById("photo2").src = products[2].image;
+        document.getElementById("photo3").src = products[3].image;
+        document.getElementById("photo4").src = products[4].image;
+        document.getElementById("photo5").src = products[5].image;
+
+        document.getElementById("name" + 1 + "").innerHTML = products[1].name;
+        document.getElementById("name" + 2 + "").innerHTML = products[2].name;
+        document.getElementById("name" + 3 + "").innerHTML = products[3].name;
+        document.getElementById("name" + 4 + "").innerHTML = products[4].name;
+        document.getElementById("name" + 5 + "").innerHTML = products[5].name;
+
+        document.getElementById("price" + 1 + "").innerHTML = products[1].price;
+        document.getElementById("price" + 2 + "").innerHTML = products[2].price;
+        document.getElementById("price" + 3 + "").innerHTML = products[3].price;
+        document.getElementById("price" + 4 + "").innerHTML = products[4].price;
+        document.getElementById("price" + 5 + "").innerHTML = products[5].price;
+
+        document.getElementById("oldPrice" + 1 + "").innerHTML = products[1].oldPrice;
+        document.getElementById("oldPrice" + 2 + "").innerHTML = products[2].oldPrice;
+        document.getElementById("oldPrice" + 3 + "").innerHTML = products[3].oldPrice;
+        document.getElementById("oldPrice" + 4 + "").innerHTML = products[4].oldPrice;
+        document.getElementById("oldPrice" + 5 + "").innerHTML = products[5].oldPrice;
+
+        document.getElementById("oldPrice" + 1 + "").innerHTML = products[1].oldPrice;
+        document.getElementById("oldPrice" + 2 + "").innerHTML = products[2].oldPrice;
+        document.getElementById("oldPrice" + 3 + "").innerHTML = products[3].oldPrice;
+        document.getElementById("oldPrice" + 4 + "").innerHTML = products[4].oldPrice;
+        document.getElementById("oldPrice" + 5 + "").innerHTML = products[5].oldPrice;
+
+        document.getElementById("kg" + 1 + "").innerHTML = products[1].params.weight;
+        document.getElementById("kg" + 2 + "").innerHTML = products[2].params.weight;
+        document.getElementById("kg" + 3 + "").innerHTML = products[3].params.weight;
+        document.getElementById("kg" + 4 + "").innerHTML = products[4].params.weight;
+        document.getElementById("kg" + 5 + "").innerHTML = products[5].params.weight;
+
+        //console.log("Bu bir denemedir:" + products[0].name);
+
+    </script>
+</body>
+
+</html>
